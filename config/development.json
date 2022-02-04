@@ -1,0 +1,5 @@
+{
+    "name": "Common Swift - Development",
+    "connectionString": "mongodb+srv://commonswift:Tetouan1*@cluster0.z1j4z.mongodb.net/commonSwift?retryWrites=true&w=majority",
+    "tokenKey": "c_swft_key"
+}
