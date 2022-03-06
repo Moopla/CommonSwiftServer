@@ -1,8 +1,8 @@
 import express from 'express';
-import {logger} from './middleware/test';
+import { logger } from './middleware/test';
 import config from 'config';
-import {userRoutes} from './routes/users';
-import {authRoutes} from './routes/auth';
+import { userRoutes } from './routes/users';
+import { authRoutes } from './routes/auth';
 import mongoose from 'mongoose';
 
 mongoose.connect(config.get("connectionString")).then(() => console.log("Connected to Mongo db"))
@@ -25,5 +25,6 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
+    console.log("index test");
     res.send('Salam alaykum');
 });
