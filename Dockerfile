@@ -1,5 +1,14 @@
 FROM node:alpine
 
+#CREATE A USER!!!   
+RUN addgroup app && adduser -S -G app app
+USER app
+
+# Build time commands
+# Create app directory
+RUN mkdir -p /app
+WORKDIR /app
+
 RUN apk update &&\
     apk upgrade &&\
     apk add --update alpine-sdk linux-headers git zlib-dev openssl-dev gperf php cmake &&\
@@ -22,10 +31,6 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 #Set environment variables
 ENV PORT=3000
 
-# Build time commands
-# Create app directory
-RUN mkdir -p /app
-WORKDIR /app
 
 # Install app dependencies
 COPY package.json .
